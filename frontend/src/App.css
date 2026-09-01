@@ -1,0 +1,495 @@
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-cream-soft);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-2);
+}
+
+.header__brand {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-wine);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.header__nav {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.header__nav a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--color-charcoal-soft);
+  transition: color 0.2s ease;
+}
+
+.header__nav a:hover {
+  color: var(--color-wine);
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button--primary {
+  background: var(--color-wine);
+  color: var(--color-cream);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--color-wine-dark);
+}
+
+.button--primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--color-wine);
+  border-color: var(--color-wine);
+}
+
+.button--ghost:hover {
+  background: var(--color-wine);
+  color: var(--color-cream);
+}
+
+/* Reutilizada por fotos de galería, tarjetas de servicios y de miembros */
+.card-lift {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Jerarquía de texto reutilizada en toda la web */
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-wine);
+  margin-bottom: var(--space-1);
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: var(--color-charcoal-soft);
+}
+
+.text-muted {
+  color: var(--color-charcoal-soft);
+}
+
+/* Hero */
+.hero {
+  padding-block: var(--space-6) var(--space-5);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.hero__photo-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hero__photo {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.hero__photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, var(--color-cream));
+  pointer-events: none;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-3);
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-4);
+  max-width: 560px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Section titles (shared: Nuestra historia, Servicios, Miembros, Conversemos) */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-wine);
+  text-align: left;
+  margin-bottom: var(--space-3);
+}
+
+/* About */
+.about {
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--color-cream-soft);
+}
+
+.about__story {
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.about__story p {
+  margin-bottom: var(--space-2);
+}
+
+.about__story p:last-child {
+  margin-bottom: 0;
+}
+
+/* Gallery */
+.gallery {
+  margin-top: var(--space-5);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+}
+
+.gallery__photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Services */
+.services {
+  padding-block: var(--space-5);
+  background: var(--color-cream-soft);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.services__item {
+  background: var(--color-cream);
+  padding: var(--space-4);
+}
+
+.services__icon {
+  display: block;
+  width: 56px;
+  height: 56px;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+  color: var(--color-gold);
+}
+
+/* Members */
+.members {
+  padding-block: var(--space-5);
+}
+
+.members__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.members__card {
+  background: var(--color-cream-soft);
+  padding: var(--space-3);
+}
+
+.members__photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: rgba(43, 36, 32, 0.08);
+  margin-bottom: var(--space-2);
+}
+
+.members__role {
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-1);
+}
+
+/* Reserva espacio para ~6 líneas de bio, aunque el texto sea corto */
+.members__card .card-text {
+  min-height: 9.6em;
+}
+
+/* Contact */
+.contact {
+  padding-block: var(--space-5) var(--space-6);
+}
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-5);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+}
+
+.field input,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 0.65rem 0;
+  border: none;
+  border-bottom: 1px solid var(--color-charcoal-soft);
+  background: transparent;
+  color: var(--color-charcoal);
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--color-wine);
+}
+
+.field__error {
+  font-size: 0.8rem;
+  color: #a33;
+}
+
+.contact__success {
+  border-top: 2px solid var(--color-gold);
+  padding-top: var(--space-3);
+}
+
+.contact__success h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-wine);
+  margin-bottom: var(--space-1);
+}
+
+/* Footer */
+.footer {
+  background: var(--color-charcoal);
+  color: var(--color-cream-soft);
+  padding-block: var(--space-4);
+  font-size: 0.85rem;
+}
+
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(246, 241, 234, 0.15);
+}
+
+.footer__brand {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.footer__social a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--color-cream-soft);
+  transition: color 0.2s ease;
+}
+
+.footer__social a:hover {
+  color: var(--color-gold);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.footer__legal-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--color-cream-soft);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer__legal-link:hover {
+  color: var(--color-gold);
+}
+
+/* Modal de textos legales */
+.legal-dialog {
+  max-width: 620px;
+  width: 90vw;
+  max-height: 80vh;
+  margin: auto;
+  padding: var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  box-shadow: var(--shadow-md);
+}
+
+.legal-dialog::backdrop {
+  background: rgba(43, 36, 32, 0.6);
+}
+
+.legal-dialog__body {
+  overflow-y: auto;
+  max-height: 55vh;
+  margin-bottom: var(--space-3);
+}
+
+.legal-dialog__body p {
+  color: var(--color-charcoal-soft);
+  margin-bottom: var(--space-2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+    padding-block: var(--space-2);
+  }
+
+  .header__brand {
+    font-size: 1.1rem;
+  }
+
+  .header__nav {
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .hero__grid,
+  .services__grid,
+  .members__grid,
+  .contact__grid,
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__photo-wrap {
+    order: -1;
+  }
+
+  .hero__photo {
+    height: 320px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
