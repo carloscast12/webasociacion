@@ -1,4 +1,4 @@
-import heroPhoto from "../assets/gallery/mama.webp";
+import heroPhoto from "../assets/gallery/foto1.webp";
 
 export default function Hero() {
   return (

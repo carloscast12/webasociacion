@@ -20,11 +20,13 @@ function FacebookIcon(props) {
   );
 }
 
-// TODO: reemplazar con los datos reales
-const FACEBOOK_URL = "https://facebook.com/PENDIENTE";
-const CONTACT_EMAIL = "asociacioncastillohernandez@gmail.com";
-const CONTACT_PHONE_DISPLAY = "+51 000 000 000";
-const CONTACT_PHONE_HREF = "+51000000000";
+const FACEBOOK_URL = "https://www.facebook.com/share/1Mcrq8EGMm/?mibextid=wwXIfr";
+const CONTACT_EMAIL = "asociacioncastillohernandez12@gmail.com";
+const CONTACT_ADDRESS = "Jr. Apurímac 459, oficina 04 - Cercado de Lima, Perú";
+const PHONES = [
+  { display: "+51 956 383 256", href: "+51956383256" },
+  { display: "+51 960 415 600", href: "+51960415600" },
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -33,7 +35,10 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer__top">
-          <p className="footer__brand">Asociación Castillo Hernández</p>
+          <div>
+            <p className="footer__brand">Asociación Castillo Hernández</p>
+            <p className="footer__address">{CONTACT_ADDRESS}</p>
+          </div>
           <div className="footer__social">
             <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FacebookIcon />
@@ -41,10 +46,12 @@ export default function Footer() {
             <a href={`mailto:${CONTACT_EMAIL}`} aria-label="Correo">
               <Mail size={18} />
             </a>
-            <a href={`tel:${CONTACT_PHONE_HREF}`} aria-label="Teléfono">
-              <Phone size={18} />
-              <span>{CONTACT_PHONE_DISPLAY}</span>
-            </a>
+            {PHONES.map((phone) => (
+              <a key={phone.href} href={`tel:${phone.href}`} aria-label="Teléfono">
+                <Phone size={18} />
+                <span>{phone.display}</span>
+              </a>
+            ))}
           </div>
         </div>
 
