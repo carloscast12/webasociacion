@@ -7,7 +7,7 @@ const MEMBERS = [
     photo: mama,
     name: "Dra. Estela Hernández",
     role: "Fundadora, Directora y conciliadora",
-    bio: "Abogada (USMP) y doctora en Ciencias de la Educación, con maestría en Derecho de los Negocios. Conciliadora Extrajudicial especializada en Derecho de Familia. Capacitadora oficial de conciliadores extrajudiciales, con experiencia como fiscal provincial corporativa en temas de violencia Familiar y fiscalías penales. Hoy es directora de defensa gremial del CAL,en la UNMSM.",
+    bio: "Abogada (USMP) y doctora en Ciencias de la Educación, con maestría en Derecho de los Negocios y maestría en Gerencia Pública. Conciliadora Extrajudicial especializada en Derecho de Familia. Capacitadora oficial de conciliadores extrajudiciales, con experiencia como fiscal provincial corporativa en temas de violencia Familiar y fiscalías penales. Trabajó como directora de defensa gremial del CAL,en la UNMSM. Hoy trabaja como abogada para la UNMSM",
   },
   {
     photo: papa,
